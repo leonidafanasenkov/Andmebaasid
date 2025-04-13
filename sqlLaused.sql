@@ -7,8 +7,8 @@
 
 -- 1 tund
 
-CREATE DATABASE posnoi;
-USE posnoi;
+CREATE DATABASE afanasenkov;
+USE afanasenkov;
 
 -- tabeli loomine
 CREATE TABLE opilane(
@@ -39,7 +39,7 @@ ryhmID int not null primary key identity(1,1),
 ryhm varchar(10) unique,
 osakond varchar(20)
 )
-INSERT INTO ryhm(ryhm,osakond)
+INSERT INTO ruhm(ruhm,osakond)
 VALUES ('TITpv24', 'IT'),
 ('KRRpv23','Rätsep')
 
