@@ -6,7 +6,7 @@ Näited: vanus, palk, temperatuur, kaal, pikkus jne
 4. **Kuupäeva** - date, time, date/time
 5. **Logilised** - bit, bool, boolean
 
-## Piirangud - ограничения
+## Piirangud
 1. Primary Key - ei anna võimalust lisada topelt väärtused
 2. UNIQUE - unikaalsus
 3. NOT NULL - ei lubata tühjad väärtused
