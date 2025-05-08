@@ -37,8 +37,13 @@ GO
 
 prava:
 GRANT ALTER ON tooted TO leonidtitpv23;
+GRANT INSERT ON tooted TO leonidtitpv23;
 GRANT DELETE ON tooted TO leonidtitpv23;
-GRANT SELECT ON kliendid TO leonidtitpv23;
+GRANT SELECT ON tooted TO leonidtitpv23;
+GO
+
+komanda otmena prava:
+REVOKE SELECT ON kliendid TO leonidtitpv23;
 GO
 
 proverka:
