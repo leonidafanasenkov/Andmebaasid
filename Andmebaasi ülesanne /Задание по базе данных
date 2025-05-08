@@ -1,0 +1,17 @@
+Andmebaasi ülesanne / Задание по базе данных
+
+1. Andmebaasi nimi / Название базы данных: minupood
+2. Vajalikud tabelid / Необходимые таблицы: tooted, kliendid
+3. Tabelite väljad / Поля таблиц:
+Tabel tooted:id – int, primary key, nimetus – varchar, hind – decimal
+Tabel kliendid: id – int, primary key, nimi – varchar, email – varchar
+4. Kasutaja andmebaasis / Пользователь базы данных:
+Login: leonidtitpv23
+Parool: 1
+5. Kasutaja õigused / Права пользователя:
+Tabel tooted: ALTER TABLE, DELETE
+Tabel kliendid: SELECT
+6. Tegevused, mida kontrollida / Действия для проверки:
+Kas kasutaja saab lisada uue veeru tabelisse tooted
+Kas kasutaja saab kustutada kirje tabelist tooted
+Kas kasutaja saab lugeda andmeid tabelist kliendid
