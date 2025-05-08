@@ -1,14 +1,12 @@
-Andmebaasi ülesanne / Задание по базе данных
-
-1. Andmebaasi nimi / Название базы данных: minupood
-2. Vajalikud tabelid / Необходимые таблицы: tooted, kliendid
-3. Tabelite väljad / Поля таблиц:
+1. Andmebaasi nimi: minupood
+2. Vajalikud tabelid: tooted, kliendid
+3. Tabelite väljad:
 Tabel tooted:id – int, primary key, nimetus – varchar, hind – decimal
 Tabel kliendid: id – int, primary key, nimi – varchar, email – varchar
-4. Kasutaja andmebaasis / Пользователь базы данных:
+4. Kasutaja andmebaasis:
 Login: leonidtitpv23
 Parool: 1
-5. Kasutaja õigused / Права пользователя:
+5. Kasutaja õigused:
 Tabel tooted: ALTER TABLE, DELETE
 Tabel kliendid: SELECT
 6. Tegevused, mida kontrollida / Действия для проверки:
@@ -16,7 +14,7 @@ Kas kasutaja saab lisada uue veeru tabelisse tooted
 Kas kasutaja saab kustutada kirje tabelist tooted
 Kas kasutaja saab lugeda andmeid tabelist kliendid
 
-create code:
+olend:
 create database minupood;
 GO
 USE minupood;
@@ -35,20 +33,33 @@ CREATE TABLE kliendid (
 );
 GO
 
-prava:
 GRANT ALTER ON tooted TO leonidtitpv23;
-GRANT INSERT ON tooted TO leonidtitpv23;
 GRANT DELETE ON tooted TO leonidtitpv23;
 GRANT SELECT ON tooted TO leonidtitpv23;
 GO
 
-komanda otmena prava:
-REVOKE SELECT ON kliendid TO leonidtitpv23;
+GRANT INSERT ON dbo.tooted TO leonidtitpv23;
 GO
 
-proverka:
-Проверка:
-Теперь пользователь leonidtitpv23 должен:
-Мочь добавлять столбцы в таблицу tooted
-Удалять записи из таблицы tooted
-итать записи из таблицы kliendid
+õiguste jaotus:
+GRANT ALTER ON tooted TO leonidtitpv23;
+GRANT DELETE ON tooted TO leonidtitpv23;
+GRANT SELECT ON tooted TO leonidtitpv23;
+GO
+GRANT INSERT ON dbo.tooted TO leonidtitpv23;
+GO
+
+Tegevused, mida kontrollida:
+Kas kasutaja saab lisada uue veeru tabelisse tooted
+Kas kasutaja saab kustutada kirje tabelist tooted
+Kas kasutaja saab lugeda andmeid tabelist tooted
+Kas kasutaja saab lugeda andmeid tabelist kliendid
+
+Läheme loodud kasutaja juurde ja kontrollime:
+USE minupood;
+GO
+ALTER TABLE tooted ADD kirjeldus VARCHAR(255);
+INSERT INTO tooted (id, nimetus, hind) VALUES (1, 'Testtoode', 9.99);
+DELETE FROM tooted WHERE id = 1;
+SELECT * FROM tooted;
+SELECT * FROM kliendid;
