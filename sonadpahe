@@ -16,3 +16,6 @@ loo - создай
 
 PRIMARY KEY - primarne võti - первичный ключ
 FOREIGN KEY - välis võti - внешний или вторичный ключ
+
+europe, estonia, pärnu
+alter add
